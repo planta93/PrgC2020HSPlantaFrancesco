@@ -10,6 +10,7 @@ typedef enum
 	FACTORIAL,
 	NCHOOSEK,
 	DECTOBINARY,
+	ARRAY_TEST,
 	EXIT
 } MenuSelection;	
 
@@ -20,6 +21,7 @@ long ComputeCubic( long x );
 long nChooseK(long n, long k);
 long decToBinary( long decN );
 float numstat (double inputValue1, double inputValue2);
+void ArrayTest(void);
 
 
 
@@ -110,6 +112,17 @@ int main(int argc, char* argv[])
 				
 				
 				
+			case ARRAY_TEST:
+			printf("ARRAY_TEST:\n");
+			ArrayTest();
+			
+			
+			break;
+
+			
+				
+				
+				
 			// Menu Stop!	
 			case EXIT:
 				printf("GAME OVER!\n");
@@ -147,6 +160,7 @@ MenuSelection PrintMainMenu(void)
 	printf("%d: Factorial\n", FACTORIAL);
 	printf("%d: nChooseK\n", NCHOOSEK);
 	printf("%d: decToBinary\n", DECTOBINARY);
+	printf("%d: arrayTest\n", ARRAY_TEST);
 	printf("%d: Exit\n", EXIT);
 	printf("\n");
 	printf("Your Choice ->     "); 
@@ -157,6 +171,7 @@ MenuSelection PrintMainMenu(void)
 		&&  selectedMenu != FACTORIAL
 		&&  selectedMenu != NCHOOSEK
 		&&  selectedMenu != DECTOBINARY
+		&&  selectedMenu != ARRAY_TEST
 		&&  selectedMenu != EXIT)
 		{
 			selectedMenu = INVALID;
@@ -252,6 +267,32 @@ float numstat (double inputValue1, double inputValue2)
 return 0;
 
 	
+}
+
+
+
+void PrintIntArray( int array[], int arrayLength )
+{
+	for(int i = 0; i < arrayLength; i++)
+	{
+		printf("%d", array[i]);
+	}
+	printf("\n");	
+
+}
+
+
+#define INTARRAYLENGTH 6
+void ArrayTest(void)
+{
+	int intArray[INTARRAYLENGTH] = {0};
+	PrintIntArray(intArray, INTARRAYLENGTH);
+	for( int i = 0; i<INTARRAYLENGTH; i++)
+	{
+		intArray [i] = i;
+	}
+	PrintIntArray(intArray, INTARRAYLENGTH);
+
 }
 
 

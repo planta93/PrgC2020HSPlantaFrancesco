@@ -14,8 +14,8 @@ int main( int argc, char *argv[]	)
 	if (argc == 3)
 	{
 		//scanf("%f\n%f", &inputValue1, &inputValue2);
-		//printf("Number of input arguments: %d\n", argc);
-		//printf("%s, %s, %s ", argv[0], argv[1], argv[2]);
+		
+		
 		
 		if (inputValue1 >= inputValue2)
 		{
